@@ -1,0 +1,138 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <div class="contaier">
+        <div class="lnw-mainhud">
+            <div class="carbody">
+                <div class="car_belt">
+                    <img src="svg/seat-belt.png" alt="">
+                </div>
+                <div class="car_lock">
+                    <img src="svg/lock.png" alt="">
+                </div>
+
+                <div class="gear_main">
+                    <span class="text_gear">GEAR</span>
+                    <span class="gear_data">9</span>
+                </div>
+
+                <div class="rpmmeter">
+                    <span class="text_rpmx">RPMx</span>
+                    <span class="text_rpmx_1">9999</span>
+                </div>
+
+                <div class="speedcover">
+                    <div class="body_car_wheel">
+                        <div class="wheel_1" id="wheel1"></div>
+                        <div class="wheel_2" id="wheel2"></div>
+                        <div class="wheel_3" id="wheel3"></div>
+                        <!-- <div class="wheel_4" id="wheel4"></div> -->
+                        <img src="svg/car_model.png" alt="">
+                    </div>
+                    <div class="speedmeter">
+                        <span>KHM</span>
+                        <span class="text_khm">300</span>
+                        <span>SPEED</span>
+                    </div>
+                    <img src="svg/speed_cover.svg" alt="">
+                </div>
+
+                <div class="lnwfuel">
+                    <svg xmlns="http://www.w3.org/2000/svg" width="32" height="89" viewBox="0 0 32 89" fill="none">
+                        <path d="M9.62031 44.4404L31.2603 88.4704H21.7103L0.0703125 44.4404L21.7103 0.400391H31.2603L9.62031 44.4404Z" fill="black"/>
+                        <defs>
+                            <linearGradient id="grad1" x1="0%" y1="0%" x2="0%" y2="100%">
+                                <stop offset="100%" style="stop-color:#2657B8;stop-opacity:1" />
+                            </linearGradient>
+                            <clipPath id="clip-path-fuel">
+                                <!-- Rectangle for Clip Path (flipped vertically) -->
+                                <rect id="progress-clip-fuel" x="0" y="0" width="32" height="89" />
+                            </clipPath>
+                        </defs>
+                        <path id="progress-fill" d="M9.62031 44.4404L31.2603 88.4704H21.7103L0.0703125 44.4404L21.7103 0.400391H31.2603L9.62031 44.4404Z" fill="url(#grad1)" clip-path="url(#clip-path-fuel)"/>
+                    </svg>
+                </div>
+    
+                <div class="lnwfix">
+                    <svg xmlns="http://www.w3.org/2000/svg" width="32" height="89" viewBox="0 0 32 89" fill="none">
+                        <path d="M22.1908 44.7197L0.550781 88.7497H10.1008L31.7408 44.7197L10.1008 0.679688H0.550781L22.1908 44.7197Z" fill="black"/>
+                        <defs>
+                            <linearGradient id="grad1" x1="0%" y1="0%" x2="0%" y2="100%">
+                                <stop offset="100%" style="stop-color:#2657B8;stop-opacity:1" />
+                            </linearGradient>
+                            <clipPath id="clip-path-fix">
+                                <!-- Rectangle for Clip Path (flipped vertically) -->
+                                <rect id="progress-clip-fix" x="0" y="0" width="32" height="89" />
+                            </clipPath>
+                        </defs>
+                        <path id="progress-fill" d="M22.1908 44.7197L0.550781 88.7497H10.1008L31.7408 44.7197L10.1008 0.679688H0.550781L22.1908 44.7197Z" fill="url(#grad1)" clip-path="url(#clip-path-fix)"/>
+                    </svg>
+                </div>
+
+                <div class="lnwrpm">
+                    <svg xmlns="http://www.w3.org/2000/svg" width="241" height="8" viewBox="0 0 241 8" fill="none">
+                        <path d="M17.8519 0H241L236 8H5.5L0 0H17.8519Z" fill="black"/>
+                        <defs>
+                            <linearGradient id="grad1" x1="0%" y1="0%" x2="0%" y2="100%">
+                                <stop offset="100%" style="stop-color:#2657B8;stop-opacity:1" />
+                            </linearGradient>
+                            <clipPath id="clip-path-rpm">
+                                <!-- Rectangle for Clip Path (flipped vertically) -->
+                                <rect id="progress-clip-rpm" x="0" y="0" width="32" height="89" />
+                            </clipPath>
+                        </defs>
+                        <path id="progress-fill" d="M17.8519 0H241L236 8H5.5L0 0H17.8519Z" fill="url(#grad1)" clip-path="url(#clip-path-rpm)"/>
+                    </svg>
+                </div>
+
+                <div class="hud_main_cover">
+                    <img src="svg/body_third.svg" alt="">
+                </div>
+
+            </div>
+
+        </div>
+    </div>
+
+    <script>
+        function setProgressFuel(percentage) {
+            const clipRectFuel = document.getElementById('progress-clip-fuel');
+            const height = 89 * (percentage / 100);
+            
+            clipRectFuel.setAttribute('y', 89 - height);
+            clipRectFuel.setAttribute('height', height);
+        }
+
+        function setProgressFix(percentage) {
+            const clipRectFix = document.getElementById('progress-clip-fix');
+            const height = 89 * (percentage / 100);
+    
+            clipRectFix.setAttribute('y', 89 - height);
+            clipRectFix.setAttribute('height', height);
+        }
+
+        function setProgressRPM(percentage) {
+            const clipRectRPM = document.getElementById('progress-clip-rpm');
+            const totalWidth = 241;
+            const rectWidth = totalWidth;
+            const height = 8;
+            const visibleWidth = totalWidth * (percentage / 100);
+            const xPosition = (totalWidth - visibleWidth) / 2;
+
+            clipRectRPM.setAttribute('x', xPosition);
+            clipRectRPM.setAttribute('width', visibleWidth);
+        }
+
+        // Set the progress to 30%
+        setProgressFuel(50);
+        setProgressFix(30);
+        setProgressRPM(80);
+    </script>
+</body>
+</html>

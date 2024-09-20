@@ -1,0 +1,170 @@
+@font-face {
+    font-family: HitmakerVF;
+    src: url(font/Hitmarker-VF.ttf);
+}
+
+
+* {
+    padding: 0;
+    margin: 0;
+    box-sizing: border-box;
+    user-select: none;
+}
+
+.contaier {
+
+}
+
+.carbody {
+    position: absolute;
+    bottom: 3%;
+    left: 50%;
+    transform: translateX(-50%);
+}
+
+.speedcover {
+    z-index: 2;
+    position: absolute;
+    top: -10px;
+    left: 93px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.body_car_wheel {
+    position: absolute;
+    bottom: 0;
+}
+
+.wheel_1 {
+    position: absolute;
+    left: 15px;
+    width: 10px;
+    height: 15px;
+    background-color: #eee;
+    border-radius: 2px;
+    box-shadow: rgba(0, 0, 0, 1) 0px 5px 15px;
+}
+
+.wheel_2 {
+    position: absolute;
+    right: 15px;
+    width: 10px;
+    height: 15px;
+    background-color: #eee;
+    border-radius: 2px;
+    box-shadow: rgba(0, 0, 0, 1) 0px 5px 15px;
+}
+
+.wheel_3 {
+    position: absolute;
+    bottom: 5px;
+    left: 4px;
+    width: 10px;
+    height: 15px;
+    background-color: #eee;
+    border-radius: 2px;
+    box-shadow: rgba(0, 0, 0, 1) 0px 5px 15px;
+}
+
+.wheel_4 {
+    position: absolute;
+    bottom: 5px;
+    right: 4px;
+    width: 10px;
+    height: 15px;
+    background-color: #eee;
+    border-radius: 2px;
+    box-shadow: rgba(0, 0, 0, 1) 0px 5px 15px;
+}
+
+.lnwfuel {
+    position: absolute;
+    top: 28px;
+    left: 8px;
+}
+
+.lnwfix {
+    position: absolute;
+    top: 28px;
+    right: 7px;
+}
+
+.lnwrpm {
+    position: absolute;
+    bottom: 4px;
+    left: 61px;
+}
+
+.speedmeter {
+    z-index: 3;
+    position: absolute;
+    /* top: 43px;
+    left: 140px;*/
+    font-family: HitmakerVF;
+    font-size: 6px;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    color: #eee; 
+}
+
+.text_khm {
+    font-size: 22px;
+}
+
+.rpmmeter {
+    z-index: 3;
+    position: absolute;
+    top: 65px;
+    left: 46px;
+    font-family: HitmakerVF;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    color: #eee;
+}
+
+.text_rpmx {
+    font-size: 6px;
+}
+
+.text_rpmx_1 {
+    font-size: 8px;
+}
+
+.gear_main {
+    z-index: 3;
+    position: absolute;
+    top: 58px;
+    right: 52px;
+    font-family: HitmakerVF;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    color: #eee;
+}
+
+.text_gear {
+    font-size: 6px;
+}
+
+.gear_data {
+    font-size: 20px;
+}
+
+.car_belt {
+    position: absolute;
+    top: 5px;
+    left: 95px;
+}
+
+.car_lock {
+    position: absolute;
+    top: 5px;
+    right: 95px;
+}
